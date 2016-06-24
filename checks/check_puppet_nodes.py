@@ -130,7 +130,6 @@ if __name__ == '__main__':
     # Get options
     parser = OptionParser(version=version)
     parser.add_option("-H", "--hostname", action="store", dest="hostname", type="string", help="The PuppetDB hostname (fqdn). eg: dev-puppetmaster-01.serv.abb.ixa.net.au")
-    parser.add_option("-l", "--loglevel", action="store", dest="loglevel", type="string", default='INFO', help="Valid log levels: CRITICAL, ERROR, WARNING, INFO, DEBUG. Defaults to INFO.")
     parser.add_option("-p", "--port", action="store", dest="port", type="int", default=8080, help="The PuppetDB port. Defaults to 8080")
     parser.add_option("-s", "--summary", action="store_false", dest="detailed",  help="Print summary - just the numbers (not host details)")
     parser.add_option("-d", "--detailed", action="store_true", dest="detailed", default=True, help="Print details - inlcudes host details")
