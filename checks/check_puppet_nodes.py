@@ -133,8 +133,8 @@ if __name__ == '__main__':
     parser.add_option("-p", "--port", action="store", dest="port", type="int", default=8080, help="The PuppetDB port. Defaults to 8080")
     parser.add_option("-s", "--summary", action="store_false", dest="detailed",  help="Print summary - just the numbers (not host details)")
     parser.add_option("-d", "--detailed", action="store_true", dest="detailed", default=True, help="Print details - inlcudes host details")
-    parser.add_option("-w", "--warning", action="store", dest="warning_threshold", type="int", default="1", help="Warning if <num> hosts are failing")
-    parser.add_option("-c", "--critical", action="store", dest="critical_threshold", type="int", default="1", help="Critical if <num> hosts are failing")
+    parser.add_option("-w", "--warning", action="store", dest="warning_threshold", type="int", default="1", help="Warning if <num> hosts are failing.  Defaults to 1.")
+    parser.add_option("-c", "--critical", action="store", dest="critical_threshold", type="int", default="4", help="Critical if <num> hosts are failing.  Defaults to 4.")
     parser.add_option("-f", "--fqdn", action="store_true", dest="fqdn_hostnames",  help="Show FQDN for hostname, instead of short hostnames.  Default is short hostname.")
     parser.add_option("-m", "--max-hosts", action="store", dest="max_hosts", type="int", default="5", help="Maximum number of host names to display per state.  Default is 5.")
 
