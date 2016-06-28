@@ -48,7 +48,7 @@ CRITICAL:: Total nodes=23, Changed=2 host-01 host-02, Failed=1 test-host-01, Noo
 
 ## checks/check_pe_license.sh
 
-Checks the status of  a PE 2015.x, PE 2016.x installation and licensing.  Designed to run locally on the puppetmaster as an NRPE Nagios check.
+Checks the status of a PE 2015.x, PE 2016.x installation and licensing.  Designed to run locally on the puppetmaster as an NRPE Nagios check.
 
 Usage:
 ```
@@ -75,3 +75,33 @@ Sample output:
 OK: Puppet Enterprise License:: Nodes used 8/150. License expires in 167 days, on 2016-12-13.
 ```
 
+## checks/check_pe_version.sh
+
+Checks for the availability of new PE versions.  Designed to run locally on the puppetmaster as an NRPE Nagios check.
+
+Usage:
+```
+  Script to check for a new Puppet PE version.  Assumes that the host on which this script is run is the puppetmaster.
+  Designed to run as an NRPE check, from nagios.  Type of alert is configurable.  If both flags are set, the last
+  listed will take precedence.
+
+  usage: ./check_puppet_pe_version.sh [-h] [-w num] [-c num] [-W num] [-C num]
+
+    -h            Usage.
+    -w            Send warning alert if new version available.  Default.
+    -c            Send critical alert if new version available.
+
+  Returns standard Nagios return codes:
+  - 0 for success
+  - 1 for warning
+  - 2 for critical
+  - 3 for unknown
+
+```
+
+Sample output:
+```
+OK: Puppet PE version is up to date.
+WARNING: Version 2016.2.0 is now available! (currently 2016.1.2). http://links.puppet.com/enterpriseupgrade
+CRITICAL: Version 2016.2.0 is now available! (currently 2016.1.2). http://links.puppet.com/enterpriseupgrade
+```
